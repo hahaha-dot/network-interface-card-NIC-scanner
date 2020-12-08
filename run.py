@@ -4,14 +4,18 @@ import os
 import sys
 
 def find():
+   no = []
    os.system("clear")
    interface = netifaces.interfaces()
-   print(interface)
    for iface in interface:
-      yes = re.findall("eth[0-9]", iface)
+      yes = re.findall("wlan[0-9]", iface)
       if yes:
-         print(yes)
+         no.append(yes)
       else:
          pass
+   if len(no) == 0:
+      print("Please bring another up interface and try again")
+   else:
+      print(no)
 
 find()
