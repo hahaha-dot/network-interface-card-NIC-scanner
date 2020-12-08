@@ -8,10 +8,10 @@ def find():
    interface = netifaces.interfaces()
    print(interface)
    for iface in interface:
-      yes = re.findall("wlan[0-9]", iface)
+      yes = re.findall("eth[0-9]", iface)
       if yes:
          print(yes)
       else:
-         print("please try again")
+         pass
 
 find()
